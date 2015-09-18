@@ -147,6 +147,7 @@
 
             <asp:Panel ID="Panel2" runat="server" Height="85px">
                 <asp:Button ID="btnAdvise" runat="server" Text="Advise" OnClick="btnAdvise_Click" />
+                <asp:Label ID="Label2" runat="server" Text="Recommended"></asp:Label>
                 <asp:ListBox ID="RecommendedListBox" runat="server"></asp:ListBox>
                 <asp:ListBox ID="TakenListBox" runat="server"></asp:ListBox>
           </asp:Panel>

@@ -135,8 +135,11 @@ public class ComputerScience
         //END A/H
 
         //Foriegn Languages
-            if(!inputArray.Contains("CHI-102") || !inputArray.Contains("FRN-102") || 
-                !inputArray.Contains("GRM-102") || !inputArray.Contains("SPN-102"))
+            if (inputArray.Contains("CHI-102") || inputArray.Contains("FRN-102") ||
+                inputArray.Contains("GRM-102") || inputArray.Contains("SPN-102"))
+            { // do nothing! 
+            }
+            else
             {
                 recList.Add("CHI-102");
                 recList.Add("FRN-102");
