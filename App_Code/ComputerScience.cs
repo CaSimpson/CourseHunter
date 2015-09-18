@@ -68,39 +68,42 @@ public class ComputerScience
         //End math courses
 
         //Natural Sciences recommended courses
-            if(!inputArray.Contains("BIO-101") || !inputArray.Contains("CHM-111") || !inputArray.Contains("PHS-211"))
+
+            bool scienceBool = false; //have you taken a 2nd tier science? variable
+            
+            //this sets above variable
+            if(inputArray.Contains("BIO-102") || !inputArray.Contains("CHM-112") || !inputArray.Contains("PHS-212"))
             {
-                recList.Add("BIO-101");
-                recList.Add("CHM-111");
-                recList.Add("PHS-211");
+                scienceBool = true;
             }
-            else
-            {
-                if (inputArray.Contains("BIO-101"))
-                {
-                    recList.Add("BIO-102");
+
+                // if statements check if you have the tier one class and no tier 2 class
+                // else if statements check if you have 2 tier 1 classes
+                if (inputArray.Contains("BIO-101") && scienceBool == false)
+                { 
+                        recList.Add("BIO-102");         
                 }
-                else
+                else if(!inputArray.Contains("CHM-111") && !inputArray.Contains("PHS-211"))
                 {
                     recList.Add("BIO-101");
                 }
-                if(inputArray.Contains("CHM-111"))
+                if (inputArray.Contains("CHM-111") && scienceBool == false)
                 {
                     recList.Add("CHM-112");
                 }
-                else
+                else if (!inputArray.Contains("BIO-101") && !inputArray.Contains("PHS-211"))
                 {
                     recList.Add("CHM-111");
                 }
-                if(inputArray.Contains("PHS-211"))
+                if (inputArray.Contains("PHS-211") && scienceBool == false)
                 {
                     recList.Add("PHS-212");
                 }
-                else
+                else if (!inputArray.Contains("CHM-111") && !inputArray.Contains("BIO-101"))
                 {
                     recList.Add("PHS-211");
                 }
-            }
+           // }
         //End Nat. Sciences
 
         //Arts/Humanities
