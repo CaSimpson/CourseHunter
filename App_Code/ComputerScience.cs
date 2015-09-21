@@ -149,8 +149,12 @@ public class ComputerScience
         //End F. Languages
 
         //History
-            if(!inputArray.Contains("HST-101") || !inputArray.Contains("HST-102") || 
-                !inputArray.Contains("HST-105") || !inputArray.Contains("HST-106"))
+            if (inputArray.Contains("HST-101") || inputArray.Contains("HST-102") ||
+                inputArray.Contains("HST-105") || inputArray.Contains("HST-106"))
+            {
+                // do nothing
+            }
+            else
             {
                 recList.Add("HST-101");
                 recList.Add("HST-102");
