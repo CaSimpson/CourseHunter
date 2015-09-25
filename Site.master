@@ -39,15 +39,16 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title">
-                    <a runat="server" href="~/">your logo here</a></p>
+                    <a runat="server" href="~/"><asp:Image ID="Image1" runat="server" Height="100px" ImageUrl="~/Images/elephantLogo.png" Width="100px" />
+                   </a></p>
             </div>
             <div class="float-right">
                 <section id="login">
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul>
-                                <li><a id="registerLink" runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a id="loginLink" runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a id="registerLink" runat="server" href="~/Account/Register"><asp:Image ID="btnRegister" runat="server" Height="30px" ImageUrl="~/Images/btnRegister.png" Width="30px" /></a></li>
+                                <li><a id="loginLink" runat="server" href="~/Account/Login"><asp:Image ID="btnLogIn" runat="server" Height="30px" ImageUrl="~/Images/btnLogIn.png" Width="30px" /></a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
@@ -62,11 +63,12 @@
                 </section>
                 <nav>
                     <ul id="menu">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/UIClassPicker">Class Picker</a></li>
-                        <li><a runat="server" href="~/TestUI">Test UI</a></li>
+                        <li><a runat="server" href="~/">
+                            <asp:Image ID="btnHome" runat="server" Height="50px" ImageUrl="~/Images/btnHome.png" Width="50px" /></a></li>
+                        <li><a runat="server" href="~/About"><asp:Image ID="btnAbout" runat="server" Height="50px" ImageUrl="~/Images/btnAbout.png" Width="50px" /></a></li>
+                        <li><a runat="server" href="~/Contact"><asp:Image ID="btnContact" runat="server" Height="50px" ImageUrl="~/Images/btnContact.png" Width="50px" /></a></li>
+                        <li><a runat="server" href="~/UIClassPicker"><asp:Image ID="btnOldUI" runat="server" Height="50px" ImageUrl="~/Images/btnOldUI.png" Width="50px" /></a></li>
+                        <li><a runat="server" href="~/TestUI"><asp:Image ID="btnNewUI" runat="server" Height="50px" ImageUrl="~/Images/btnNewUI.png" Width="50px" /></a></li>
                     </ul>
                 </nav>
             </div>
