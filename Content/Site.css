@@ -543,6 +543,12 @@ input[type="checkbox"].input-validation-error {
      color:#fff;
 }
 
+.tableheader {
+
+    background-color:#4e4e4e;
+
+}
+
 table.mytable td {
 
      padding: 0.25em 2em 0.25em 0em;

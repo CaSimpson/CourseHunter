@@ -19,14 +19,14 @@
 <asp:Content runat="server" ID="appBody" ContentPlaceHolderID="MainContent">
     <h3>We suggest the following:</h3>
 
-
+    <asp:PlaceHolder ID="uiPlaceholder" runat="server">
     
 
     
     <table class="mytable" width="719" height="510" border="1" style="visibility: visible">
       <tbody class="mytable">
           
-        <tr>
+        <tr class="tableheader">
           <td class="auto-style1">Requirement Area</td>
           <td class="auto-style1">Sub Area / Topic</td>
           <td class="auto-style1"># credit hours</td>
@@ -43,10 +43,10 @@
           <td><asp:CheckBox ID="ENG102" runat="server" /></td>
         </tr>
         <tr>
-          <td class="tdF">Speech</td>
-          <td>3</td>
-          <td>SPCH 201</td>
-          <td colspan="2" align="center"><asp:CheckBox ID="SPC201" runat="server" /></td>
+          <td class="auto-style2">Speech</td>
+          <td class="auto-style2">3</td>
+          <td class="auto-style2">SPCH 201</td>
+          <td colspan="2" align="center" class="auto-style2"><asp:CheckBox ID="SPC201" runat="server" /></td>
           
           
         </tr>
@@ -169,12 +169,102 @@
           
       </tbody>
     </table>
+
+    <table class="mytable" width="719" height="510" border="1" style="visibility: visible">
+        <tbody class="mytable">
+        <tr class="tableheader">
+            <td colspan="2">Core Major Requirements</td>
+            <td>33</td>
+            
+        </tr>
+        <tr class="tableheader">
+            <td></td>
+            <td>Credit Hours</td>
+            <td>Completed</td>
+        </tr>
+        <tr>
+            <td>CSCIU200: Computer Science I</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="cs200" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU210: Computer Organization</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="cs210"  runat="server" /></td>
+        </tr>
+            <tr >
+            <td rowspan="2">CSCIU200: Visual BASIC Programming or CSCIU238: C++ Programming</td>
+            <td>3</td>
+                
+            <td><asp:CheckBox ID="cs234" runat="server" /></td>
+        </tr>
+            <tr>
+                <td>3</td>
+            
+            <td><asp:CheckBox ID="cs238" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU300: Computer Science II</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="cs300" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU310: Intro to Computer Architecture</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="cs310" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU321: Computer Science III</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="cs321" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU421: Design & Analysis of Algorithms</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="cs421" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU511: Operation Systems</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="cs511" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU530: Programming Language Structures</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="cs530" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU540: Software Engineering</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="cs540" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU599: Senior Seminar</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="cs599" runat="server" /></td>
+        </tr>
+
+            </tbody>
+    </table>
     
+
+    <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+    <asp:ListBox ID="listboxComplete" runat="server"></asp:ListBox>
+    <asp:ListBox ID="listboxRecommend" runat="server"></asp:ListBox>
+    
+
+</asp:PlaceHolder>
+
 </asp:Content>
+
+
 <asp:Content ID="Content1" runat="server" contentplaceholderid="HeadContent">
     <style type="text/css">
         .auto-style1 {
             height: 61px;
+        }
+        .auto-style2 {
+            height: 41px;
         }
     </style>
 </asp:Content>
