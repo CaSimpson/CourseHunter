@@ -35,6 +35,32 @@ public partial class TestUI : System.Web.UI.Page
                 courseList.Add(row["courseID"].ToString());
             }
 
+            natScienceDrop.Items.Add("BIO101");
+            natScienceDrop2.Items.Add("BIO102");
+            natScienceDrop.Items.Add("CHEM111");
+            natScienceDrop2.Items.Add("CHEM112");
+            natScienceDrop.Items.Add("PHYS211");
+            natScienceDrop2.Items.Add("PHYS212");
+
+            artsDropBox.Items.Add("AFAM204");
+            artsDropBox.Items.Add("ARTH101");
+
+            historyDropBox.Items.Add("HIST101");
+            historyDropBox.Items.Add("HIST102");
+
+            humDropBox.Items.Add("AMST101");
+            humDropBox.Items.Add("AMST102");
+
+            foreignDropBox.Items.Add("SPAN101");
+            foreignDropBox.Items.Add("CHIN101");
+
+            socDropBox1.Items.Add("AFAM201");
+            socDropBox1.Items.Add("ANTH102");
+            socDropBox1.Items.Add("AFAM201");
+            socDropBox1.Items.Add("ANTH102");
+
+
+
 
         }
 

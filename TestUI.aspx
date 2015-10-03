@@ -55,116 +55,90 @@
           
         </tr>
         <tr>
-          <td rowspan="2">II. Mathematics, Logic &amp; Natural Sciences</td>
+          <td rowspan="3">II. Mathematics, Logic &amp; Natural Sciences</td>
           <td>Mathematics</td>
-          <td>8</td>
+          <td>4</td>
           <td>Math U141, Math U142</td>
           <td><asp:CheckBox ID="MATH141" runat="server" /></td>
           <td><asp:CheckBox ID="Math142" runat="server" /></td>
         </tr>
         <tr>
-          <td>Natural Science (w/lab)</td>
+          <td rowspan="2">Natural Science (w/lab)</td>
           <td>8</td>
-          <td>BIOL U101/L, U102/L or CHEM U111/L, U112/L, or PHYS U211/L, U212/L</td>
-          <td><asp:CheckBox ID="NS101" runat="server" /></td>
-          <td><asp:CheckBox ID="NS102" runat="server" /></td>
+          <td><asp:DropDownList ID="natScienceDrop" runat="server"></asp:DropDownList>
+              
+          </td>
+          <td colspan="2"><asp:CheckBox ID="NS101" runat="server" /></td>
+          
           
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td>4</td>
+          <td><asp:DropDownList ID="natScienceDrop2" runat="server"></asp:DropDownList></td>
+          <td colspan="2"><asp:CheckBox ID="NS102" runat="server" /></td>
+          
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td colspan="6">&nbsp;</td>
+         
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td>III. Information Technology</td>
+          <td>Information Technology</td>
+          <td>3</td>
+          <td>CSCI U150</td>
+          <td colspan="2"><asp:CheckBox ID="cs150" runat="server" /></td>
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td colspan="6">&nbsp;</td>
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td rowspan="3">IV. Fine Arts, Humanities & History</td>
+          <td>Fine Arts</td>
+          <td>3</td>
+          <td><asp:DropDownList ID="artsDropBox" runat="server"></asp:DropDownList></td>
+          <td colspan="2"><asp:CheckBox ID="art101" runat="server" /></td>
+          
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td>History</td>
+          <td>3</td>
+          <td><asp:DropDownList ID="historyDropBox" runat="server"></asp:DropDownList></td>
+          <td colspan="2"><asp:CheckBox ID="history101" runat="server" /></td>
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td>Humanities</td>
+          <td>3</td>
+          <td><asp:DropDownList ID="humDropBox" runat="server"></asp:DropDownList></td>
+          <td colspan="2"><asp:CheckBox ID="hum101" runat="server" /></td>
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td colspan="6">&nbsp;</td>
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td>V. Foreign Language & Culture</td>
+          <td>Foreign Language</td>
+          <td>3</td>
+          <td><asp:DropDownList ID="foreignDropBox" runat="server"></asp:DropDownList></td>
+          <td colspan="2"><asp:CheckBox ID="foreign101" runat="server" /></td>
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td colspan="6">&nbsp;</td>
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td rowspan="2">VI. Social & Behavioral Sciences</td>
+          <td rowspan="2">Social & Behavioral Sciences</td>
+          <td>3</td>
+          <td><asp:DropDownList ID="socDropBox1" runat="server"></asp:DropDownList></td>
+          <td colspan="2"><asp:CheckBox ID="soc101" runat="server" /></td>
+        </tr>
+          <tr>
+          <td>3</td>
+           <td><asp:DropDownList ID="socDropBox2" runat="server"></asp:DropDownList></td>
+          <td colspan="2"><asp:CheckBox ID="soc102" runat="server" /></td>
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+          <td colspan="6">&nbsp;</td>
         </tr>
           
       </tbody>
@@ -192,17 +166,13 @@
             <td>3</td>
             <td><asp:CheckBox ID="cs210"  runat="server" /></td>
         </tr>
-            <tr >
-            <td rowspan="2">CSCIU200: Visual BASIC Programming or CSCIU238: C++ Programming</td>
+            <tr>
+            <td>CSCIU234: Visual BASIC Programming or CSCIU238: C++ Programming</td>
             <td>3</td>
                 
             <td><asp:CheckBox ID="cs234" runat="server" /></td>
         </tr>
-            <tr>
-                <td>3</td>
-            
-            <td><asp:CheckBox ID="cs238" runat="server" /></td>
-        </tr>
+           
             <tr>
             <td>CSCIU300: Computer Science II</td>
             <td>3</td>
@@ -243,7 +213,7 @@
             <td>3</td>
             <td><asp:CheckBox ID="cs599" runat="server" /></td>
         </tr>
-
+            
             </tbody>
     </table>
     
