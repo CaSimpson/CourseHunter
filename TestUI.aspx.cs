@@ -82,6 +82,8 @@ protected void btnSubmit_Click(object sender, EventArgs e)
             checkedList.Add(c.ID);
             
         }
+        Session["Data"] = checkedList;
+        Response.Redirect("Results.aspx");
 
     }
 
