@@ -21,6 +21,8 @@
     <p>
         
         <asp:ListBox ID="allPosListBox" runat="server"></asp:ListBox>
+
+
         <asp:Label ID="rec1" runat="server" Text="Label"></asp:Label>
         <asp:Label ID="rec2" runat="server" Text="Label"></asp:Label>
         <asp:Label ID="rec3" runat="server" Text="Label"></asp:Label>

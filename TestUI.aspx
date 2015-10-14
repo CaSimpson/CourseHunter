@@ -39,14 +39,14 @@
           <td>English</td>
           <td>6</td>
           <td>ENGL U101, ENGL U102</td>
-          <td ><asp:CheckBox ID="ENG101" runat="server" /></td>
-          <td><asp:CheckBox ID="ENG102" runat="server" /></td>
+          <td ><asp:CheckBox ID="ENGLU101" runat="server" /></td>
+          <td><asp:CheckBox ID="ENGLU102" runat="server" /></td>
         </tr>
         <tr>
           <td class="auto-style2">Speech</td>
           <td class="auto-style2">3</td>
           <td class="auto-style2">SPCH 201</td>
-          <td colspan="2" align="center" class="auto-style2"><asp:CheckBox ID="SPC201" runat="server" /></td>
+          <td colspan="2" align="center" class="auto-style2"><asp:CheckBox ID="SPCH201" runat="server" /></td>
           
           
         </tr>
@@ -55,27 +55,27 @@
           
         </tr>
         <tr>
-          <td rowspan="3">II. Mathematics, Logic &amp; Natural Sciences</td>
-          <td>Mathematics</td>
+          <td rowspan="3">II. MathematiCSCIU, Logic &amp; Natural Sciences</td>
+          <td>MathematiCSCIU</td>
           <td>4</td>
           <td>Math U141, Math U142</td>
-          <td><asp:CheckBox ID="MATH141" runat="server" /></td>
-          <td><asp:CheckBox ID="Math142" runat="server" /></td>
+          <td><asp:CheckBox ID="MATHU141"  runat="server" /></td>
+          <td><asp:CheckBox ID="MATHU142" runat="server" /></td>
         </tr>
         <tr>
           <td rowspan="2">Natural Science (w/lab)</td>
           <td>8</td>
-          <td><asp:DropDownList ID="natScienceDrop" runat="server"></asp:DropDownList>
+          <td><asp:DropDownList ID="ns101DropBox" runat="server"></asp:DropDownList>
               
           </td>
-          <td colspan="2"><asp:CheckBox ID="NS101" runat="server" /></td>
+          <td colspan="2"><asp:CheckBox ID="ns101" runat="server" /></td>
           
           
         </tr>
         <tr>
           <td>4</td>
-          <td><asp:DropDownList ID="natScienceDrop2" runat="server"></asp:DropDownList></td>
-          <td colspan="2"><asp:CheckBox ID="NS102" runat="server" /></td>
+          <td><asp:DropDownList ID="ns102DropBox" runat="server"></asp:DropDownList></td>
+          <td colspan="2"><asp:CheckBox ID="ns102" runat="server" /></td>
           
         </tr>
         <tr>
@@ -86,8 +86,8 @@
           <td>III. Information Technology</td>
           <td>Information Technology</td>
           <td>3</td>
-          <td>CSCI U150</td>
-          <td colspan="2"><asp:CheckBox ID="cs150" runat="server" /></td>
+          <td>CSCIU1500</td>
+          <td colspan="2"><asp:CheckBox ID="CSCIU150" runat="server" /></td>
         </tr>
         <tr>
           <td colspan="6">&nbsp;</td>
@@ -96,20 +96,20 @@
           <td rowspan="3">IV. Fine Arts, Humanities & History</td>
           <td>Fine Arts</td>
           <td>3</td>
-          <td><asp:DropDownList ID="artsDropBox" runat="server"></asp:DropDownList></td>
+          <td><asp:DropDownList ID="art101DropBox" runat="server"></asp:DropDownList></td>
           <td colspan="2"><asp:CheckBox ID="art101" runat="server" /></td>
           
         </tr>
         <tr>
           <td>History</td>
           <td>3</td>
-          <td><asp:DropDownList ID="historyDropBox" runat="server"></asp:DropDownList></td>
-          <td colspan="2"><asp:CheckBox ID="history101" runat="server" /></td>
+          <td><asp:DropDownList ID="his101DropBox" runat="server"></asp:DropDownList></td>
+          <td colspan="2"><asp:CheckBox ID="his101" runat="server" /></td>
         </tr>
         <tr>
           <td>Humanities</td>
           <td>3</td>
-          <td><asp:DropDownList ID="humDropBox" runat="server"></asp:DropDownList></td>
+          <td><asp:DropDownList ID="hum101DropBox" runat="server"></asp:DropDownList></td>
           <td colspan="2"><asp:CheckBox ID="hum101" runat="server" /></td>
         </tr>
         <tr>
@@ -119,8 +119,8 @@
           <td>V. Foreign Language & Culture</td>
           <td>Foreign Language</td>
           <td>3</td>
-          <td><asp:DropDownList ID="foreignDropBox" runat="server"></asp:DropDownList></td>
-          <td colspan="2"><asp:CheckBox ID="foreign101" runat="server" /></td>
+          <td><asp:DropDownList ID="for101DropBox" runat="server"></asp:DropDownList></td>
+          <td colspan="2"><asp:CheckBox ID="for101" runat="server" /></td>
         </tr>
         <tr>
           <td colspan="6">&nbsp;</td>
@@ -129,12 +129,12 @@
           <td rowspan="2">VI. Social & Behavioral Sciences</td>
           <td rowspan="2">Social & Behavioral Sciences</td>
           <td>3</td>
-          <td><asp:DropDownList ID="socDropBox1" runat="server"></asp:DropDownList></td>
+          <td><asp:DropDownList ID="soc101DropBox" runat="server"></asp:DropDownList></td>
           <td colspan="2"><asp:CheckBox ID="soc101" runat="server" /></td>
         </tr>
           <tr>
           <td>3</td>
-           <td><asp:DropDownList ID="socDropBox2" runat="server"></asp:DropDownList></td>
+           <td><asp:DropDownList ID="soc102DropBox" runat="server"></asp:DropDownList></td>
           <td colspan="2"><asp:CheckBox ID="soc102" runat="server" /></td>
         </tr>
         <tr>
@@ -159,59 +159,59 @@
         <tr>
             <td>CSCIU200: Computer Science I</td>
             <td>3</td>
-            <td><asp:CheckBox ID="cs200" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU200" runat="server" /></td>
         </tr>
             <tr>
             <td>CSCIU210: Computer Organization</td>
             <td>3</td>
-            <td><asp:CheckBox ID="cs210"  runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU210"  runat="server" /></td>
         </tr>
             <tr>
             <td>CSCIU234: Visual BASIC Programming or CSCIU238: C++ Programming</td>
             <td>3</td>
                 
-            <td><asp:CheckBox ID="cs234" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU234" runat="server" /></td>
         </tr>
            
             <tr>
             <td>CSCIU300: Computer Science II</td>
             <td>3</td>
-            <td><asp:CheckBox ID="cs300" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU300" runat="server" /></td>
         </tr>
             <tr>
             <td>CSCIU310: Intro to Computer Architecture</td>
             <td>3</td>
-            <td><asp:CheckBox ID="cs310" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU310" runat="server" /></td>
         </tr>
             <tr>
             <td>CSCIU321: Computer Science III</td>
             <td>3</td>
-            <td><asp:CheckBox ID="cs321" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU321" runat="server" /></td>
         </tr>
             <tr>
             <td>CSCIU421: Design & Analysis of Algorithms</td>
             <td>3</td>
-            <td><asp:CheckBox ID="cs421" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU421" runat="server" /></td>
         </tr>
             <tr>
             <td>CSCIU511: Operation Systems</td>
             <td>3</td>
-            <td><asp:CheckBox ID="cs511" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU511" runat="server" /></td>
         </tr>
             <tr>
             <td>CSCIU530: Programming Language Structures</td>
             <td>3</td>
-            <td><asp:CheckBox ID="cs530" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU530" runat="server" /></td>
         </tr>
             <tr>
             <td>CSCIU540: Software Engineering</td>
             <td>3</td>
-            <td><asp:CheckBox ID="cs540" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU540" runat="server" /></td>
         </tr>
             <tr>
             <td>CSCIU599: Senior Seminar</td>
             <td>3</td>
-            <td><asp:CheckBox ID="cs599" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU599" runat="server" /></td>
         </tr>
             
             </tbody>
@@ -229,7 +229,7 @@
 
 
 <asp:Content ID="Content1" runat="server" contentplaceholderid="HeadContent">
-    <style type="text/css">
+    <style type="text/CSCIUs">
         .auto-style1 {
             height: 61px;
         }
