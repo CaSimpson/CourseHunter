@@ -11,7 +11,7 @@ using System.Configuration;
 
 public partial class TestUI : System.Web.UI.Page
 {
-    String id = "A00420";
+    int id = 1;
     char[][] transferArray = new char[99][];
     String[] checkedArray;
     List<String> checkedList = new List<String>();
@@ -160,19 +160,42 @@ public partial class TestUI : System.Web.UI.Page
         }//end foreach
 
 
+        List<int> intChecked = new List<int>();
 
-        //gets the difference of completed courses and all courses
-        IEnumerable<String> allNeeded = courseList.Except(checkedList);
+
+        //conC.Open();
+
+        SqlConnection conGetID = new SqlConnection("Data Source=c-lomain\\cssqlserver;Initial Catalog=courseHunter540;Integrated Security=True");
+        SqlCommand cmdGetID = new SqlCommand();
+        
+        int idValue;
+
+            foreach (String s in checkedList)
+            {
+                  cmdGetID.CommandText = "getID";
+                  cmdGetID.CommandType = CommandType.StoredProcedure;
+                  cmdGetID.Connection = conGetID;
+                  cmdGetID.Parameters.AddWithValue("@course_number", s);
+                  conGetID.Open();
+                  idValue = (int)cmdGetID.ExecuteScalar();
+            cmdGetID.Parameters.Clear();
+            intChecked.Add(idValue);
+            conGetID.Close();
+        }
+        
+
+            //gets the difference of completed courses and all courses
+            IEnumerable<String> allNeeded = courseList.Except(checkedList);
 
         // This uses build in method Exept to find the differece of all courses and completed
         // This list will be the courses needed to complete degree
         List<String> needcourses = courseList.Except(checkedList).ToList();
 
         //\ Create ResultsBuilder Object, which needs a list of completed and needed courses
-        rb = new ResultsBuilder(checkedList, needcourses);
+        //rb = new ResultsBuilder(checkedList, needcourses);
 
 
-
+        
 
 
 
@@ -194,16 +217,16 @@ public partial class TestUI : System.Web.UI.Page
 
         //\ This creates connection to database and stores completed courses for the user.
         //\ by using stored procedure that takes student id and course id as parameters
-        SqlConnection conC = new SqlConnection("Data Source=c-lomain\\cssqlserver;Initial Catalog=coursehunterdb;Integrated Security=True");
+        SqlConnection conC = new SqlConnection("Data Source=c-lomain\\cssqlserver;Initial Catalog=courseHunter540;Integrated Security=True");
         //conC.Open();
 
-        foreach (String s in checkedList)
+        foreach (int i in intChecked)
         {
-            using (SqlCommand cmd = new SqlCommand("addCourse", conC))
+            using (SqlCommand cmd = new SqlCommand("addTaken", conC))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@StudentID", id);
-                cmd.Parameters.AddWithValue("@CourseID", s);
+                cmd.Parameters.AddWithValue("@studentid", id);
+                cmd.Parameters.AddWithValue("@courseid", i);
                 conC.Open();
                 try
                 {
@@ -316,11 +339,11 @@ public partial class TestUI : System.Web.UI.Page
         //listboxComplete.Items.Add(s);
     }
 
-    foreach(String s in needcourses)
+    foreach(int s in intChecked)
     {
         //if (!checkedList.Contains(s))
         //{
-            //listboxRecommend.Items.Add(s);
+            listboxRecommend.Items.Add(s.ToString());
         //}
     }
 
@@ -332,8 +355,8 @@ public partial class TestUI : System.Web.UI.Page
     }
 
 
-        Response.Redirect("Results.aspx");
-        Server.Transfer("Results.asps");
+      //  Response.Redirect("Results.aspx");
+       // Server.Transfer("Results.asps");
 
 
 

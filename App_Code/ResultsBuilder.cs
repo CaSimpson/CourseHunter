@@ -29,50 +29,60 @@ public class ResultsBuilder
 
     SqlConnection con = new SqlConnection("Data Source=c-lomain\\cssqlserver;Initial Catalog=test1;Integrated Security=True");
 
-    List<String> allCourses = new List<String>();       //\ list of all courses
-    List<String> takenCourses = new List<String>();  //\ list of complete courses
-    List<String> neededCourses = new List<String>();      //\ list of needed courses
-    List<String> possibleCourses = new List<String>();     //\ list of needed courses where prereqs are met
-    List<String> currentPrereqs = new List<String>();       //\ temp list used to hold pre reqs for current course      
-    HashSet<String> needHash = new HashSet<String>();
-    HashSet<String> removeHash = new HashSet<String>();    //\ Hashset used to store all courses where pre req
+    List<int> allCourses = new List<int>();       //\ list of all courses
+    List<int> takenCourses = new List<int>();  //\ list of complete courses
+    List<int> neededCourses = new List<int>();      //\ list of needed courses
+    List<int> possibleCourses = new List<int>();     //\ list of needed courses where prereqs are met
+    List<int> currentPrereqs = new List<int>();       //\ temp list used to hold pre reqs for current course      
+    HashSet<int> needHash = new HashSet<int>();
+    HashSet<int> removeHash = new HashSet<int>();    //\ Hashset used to store all courses where pre req
                                                              //\ have not been met
-    List<String[]> prereqList = new List<string[]>();
-    String[] prereqTemp = new String[2];
+    List<int[]> prereqList = new List<int[]>();
+    int[] prereqTemp = new int[2];
     List<String[]> priorityList = new List<String[]>();       //\ list used to hold "priority values"
-    public static String[] recommendedCourses = new String[5]; //\ array used to hold the top 5 recommended courses
+    public static int[] recommendedCourses = new int[5]; //\ array used to hold the top 5 recommended courses
     String id; //\ <--- testing var
 
-    String[][] prereqArray = new String[106][];
+    int[][] prereqArray = new int[106][];
 
     List<String> testList = new List<String>();
 
-    List<String> posTest = new List<String>();
+    List<int> posTest = new List<int>();
+
+    List<int> testPos = new List<int>();
+
+    List<int> testPre = new List<int>();
 
     //[][] priorityList = new String[5][];
 
 
     // constructor param: List of needed courses, List of taken courses
-    public ResultsBuilder(List<String> need, List<String> taken)
+    public ResultsBuilder(List<int> need, List<int> taken)
 	{
         //\ init variables
         takenCourses = taken;
         neededCourses = need;
         posTest = need;
         //\ initializes a hashset will all classes needed
-        foreach(String s in neededCourses)
+        foreach(int i in neededCourses)
         {
-            needHash.Add(s);
+            needHash.Add(i);
         }
 
         
         
 	}
 
-    public  String[] getRecommended()
+    int[] testPrereq = new int[5];
+
+    public  int[] getRecommended()
     {
+        //for(int p = 0; p < 5; p++)
+       // {
+       //     testPrereq[p] = testPos[p];
+      //  }
 
-
+        //return recommendedCourses;
         return recommendedCourses;
     }
 
@@ -80,15 +90,15 @@ public class ResultsBuilder
     {
         int prioritySize = possibleCourses.Count();
         //String[][] priorityArray = new String[prioritySize][];
-        Dictionary<String, int> priBook = new Dictionary<string, int>();
+        Dictionary<int, int> priBook = new Dictionary<int, int>();
         int i = 0;
         int pri = 0;
 
 
-        foreach(String s in possibleCourses)
+        foreach(int s in possibleCourses)
         {
             
-            foreach(String[] p in prereqList)
+            foreach(int[] p in prereqList)
             {
                 if(p[1] == s)
                 {
@@ -98,17 +108,17 @@ public class ResultsBuilder
             priBook.Add(s, pri);
 
         }
-        List<KeyValuePair<string, int>> priList = priBook.ToList();
+        List<KeyValuePair<int, int>> priList = priBook.ToList();
         priList.Sort(
-            delegate (KeyValuePair<string, int> firstPair,
-            KeyValuePair<string, int> nextPair)
+            delegate (KeyValuePair<int, int> firstPair,
+            KeyValuePair<int, int> nextPair)
             {
                 return firstPair.Value.CompareTo(nextPair.Value);
             });
 
 
         int recCounter = 0;
-       foreach(KeyValuePair<string, int> kv in priList)
+       foreach(KeyValuePair<int, int> kv in priList)
         {
             if (recCounter < 5)
             {
@@ -123,15 +133,21 @@ public class ResultsBuilder
 
 
 
-
+   
 
 
     // getter - returns all courses where requirements are met
-    public List<String> getPossible()
+    public List<int> getPossible()
     {
+
+        for (int p = 0; p < 5; p++)
+        {
+            testPos.Add(prereqList[p][0]);
+        }
         //return neededCourses;
         //return testList;
         return possibleCourses;
+       // return testPre;
     }
 
     public void findPossible()
@@ -139,7 +155,7 @@ public class ResultsBuilder
 
 
         //\ opens connection to sql server
-        using (SqlConnection sqlconn = new SqlConnection("Data Source=c-lomain\\cssqlserver;Initial Catalog=coursehunterdb;Integrated Security=True"))
+        using (SqlConnection sqlconn = new SqlConnection("Data Source=c-lomain\\cssqlserver;Initial Catalog=courseHunter540;Integrated Security=True"))
         {
             //\ This will check each course you need and see if you meet prereqs
             //  foreach(String s in neededCourses)
@@ -171,10 +187,12 @@ public class ResultsBuilder
                 {
                     while (dataReader.Read())
                     {
-                        String groupID = Convert.ToString(dataReader["group_id"]);
-                        String courseID = Convert.ToString(dataReader["course_id"]);
-                        prereqTemp[0] = groupID;
-                        prereqTemp[1] = courseID;
+                    //String groupID = Convert.ToString(dataReader["group_id"]);
+                    //String courseID = Convert.ToString(dataReader["course_id"]);
+                    int groupID = Convert.ToInt32(dataReader["group_id"]);
+                    int courseID = Convert.ToInt32(dataReader["course_id"]);
+                    prereqTemp[0] = groupID;
+                    prereqTemp[1] = courseID;
                     if(!takenCourses.Contains(courseID))
                     {
                         if(posTest.Contains(groupID))
@@ -185,22 +203,26 @@ public class ResultsBuilder
 
 
                     //possibleCourses.Add(groupID);
-                  
-                    prereqArray[prereqCounter] = new String[] {groupID, courseID};
+                    testPre.Add(prereqTemp[0]);
+                    prereqArray[prereqCounter] = new int[] {groupID, courseID};
                     prereqCounter++;
                     prereqList.Add(prereqTemp); //\ a list of current prereqs for current course 's'
                     }
                 }
 
-
+         
+           // for(int i = 0; i < prereqArray.Length; i++)
+          //  {
+           //     testPos.Add(prereqArray[i][0]);
+            //}
 
             sqlconn.Close(); //\ closes current sql connection
 
 
-            foreach(String s in removeHash)
-            {
-                needHash.Remove(s);
-            }
+           // foreach(String s in removeHash)
+            //{
+           //     needHash.Remove(s);
+           // }
 
 
            // for(int i = 0; i < 106; i++)
@@ -245,7 +267,7 @@ public class ResultsBuilder
             
         }
 
-        foreach(String s in posTest)
+        foreach(int s in posTest)
         {
            possibleCourses.Add(s);
         }

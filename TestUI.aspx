@@ -22,7 +22,7 @@
     <asp:PlaceHolder ID="uiPlaceholder" runat="server">
     
 
-    
+    <form id="form1" runat="server">
     <table class="mytable" width="719" height="510" border="1" style="visibility: visible">
       <tbody class="mytable">
           
@@ -294,21 +294,12 @@
     <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
     <asp:ListBox ID="listboxComplete" runat="server"></asp:ListBox>
     <asp:ListBox ID="listboxRecommend" runat="server"></asp:ListBox>
-    
-
+    </form>
+        
 </asp:PlaceHolder>
 
 </asp:Content>
 
 
-<asp:Content ID="Content1" runat="server" contentplaceholderid="HeadContent">
-    <style type="text/CSCIUs">
-        .auto-style1 {
-            height: 61px;
-        }
-        .auto-style2 {
-            height: 41px;
-        }
-    </style>
-</asp:Content>
+
 
