@@ -232,18 +232,18 @@
         <tr>
             <td>CSCIU314: Industrial Robotics</td>
             <td>3</td>
-            <td><asp:CheckBox ID="CSCIU314" runat="server" /></td>
+            <td><asp:CheckBox ID="changemetoo" runat="server" /></td>
         </tr>
             <tr>
             <td>CSCIU210: Computer Organization</td>
             <td>3</td>
-            <td><asp:CheckBox ID="CSCIU314"  runat="server" /></td>
+            <td><asp:CheckBox ID="changeme"  runat="server" /></td>
         </tr>
             <tr>
             <td>CSCIU234: Visual BASIC Programming or CSCIU238: C++ Programming</td>
             <td>3</td>
                 
-            <td><asp:CheckBox ID="CSCIU314" runat="server" /></td>
+            <td><asp:CheckBox ID="changeme3" runat="server" /></td>
         </tr>
            
             <tr>
