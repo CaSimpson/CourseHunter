@@ -11,12 +11,12 @@ using System.Configuration;
 
 public partial class TestUI : System.Web.UI.Page
 {
-    String id = "000001";
+    String id = "A00420";
     char[][] transferArray = new char[99][];
     String[] checkedArray;
     List<String> checkedList = new List<String>();
-    List<String> courseList = new List<String>();
-    List<String> neededList = new List<String>();
+    public List<String> courseList = new List<String>();
+    public List<String> neededList = new List<String>();
     List<String> preReqList = new List<String>();
 
     public static ResultsBuilder rb;
@@ -131,52 +131,57 @@ public partial class TestUI : System.Web.UI.Page
 
     }
 
-   
 
 
-protected void btnSubmit_Click(object sender, EventArgs e)
-{
 
-    
-    //scans web controls and adds all "checked" checkboxes to checkedList
-    foreach(Control c in uiPlaceholder.Controls.OfType<CheckBox>()) 
+    protected void btnSubmit_Click(object sender, EventArgs e)
     {
-        if (c is CheckBox && ((CheckBox)c).Checked)
+
+
+        //scans web controls and adds all "checked" checkboxes to checkedList
+        foreach (Control c in uiPlaceholder.Controls.OfType<CheckBox>())
         {
-                String formattedID = c.ID; //hols value of formatted ID
-
-                if (c.ID.Length < 8)
+            if (c is CheckBox && ((CheckBox)c).Checked)
+            {
+                String formattedID = c.ID; //holds value of formatted ID
+                //\ if id < 7 than it contains a checkbox, and we call getID method to return it
+                if (c.ID.Length < 7)
                 {
-                    
-                } 
+                    formattedID = getID(c.ID);
+                }
+                //\ if not grab the id of the checkbox and add a space(because of id formatting)
+                else
+                {
+                    formattedID = formattedID.Insert(4, " ");
+                }
+                //\ this adds each courseID (formatted properly) that was "checked" to a list
+                checkedList.Add(formattedID);
+            }//end if
+        }//end foreach
 
 
 
-                
-                formattedID = formattedID.Insert(4, " ");
-            checkedList.Add(formattedID);
-                
-            
-        }
+        //gets the difference of completed courses and all courses
+        IEnumerable<String> allNeeded = courseList.Except(checkedList);
 
-            
+        // This uses build in method Exept to find the differece of all courses and completed
+        // This list will be the courses needed to complete degree
+        List<String> needcourses = courseList.Except(checkedList).ToList();
 
-    }
-
-    
-
-    //gets the difference of completed courses and all courses
-    IEnumerable<String> allNeeded = courseList.Except(checkedList);
-    List<String> needcourses = courseList.Except(checkedList).ToList();
-
-       
-
+        //\ Create ResultsBuilder Object, which needs a list of completed and needed courses
         rb = new ResultsBuilder(checkedList, needcourses);
 
 
 
 
 
+
+
+
+
+
+
+        // older code
         //\ This will create a new table to save the user's list of needed courses
         // String createTbl = "CREATE TABLE "+ id +"(courseIdAndNumber text);";
 
@@ -188,18 +193,83 @@ protected void btnSubmit_Click(object sender, EventArgs e)
 
 
         //\ This creates connection to database and stores completed courses for the user.
-        SqlConnection conC = new SqlConnection("Data Source=c-lomain\\cssqlserver;Initial Catalog=test1;Integrated Security=True");
-        conC.Open();
+        //\ by using stored procedure that takes student id and course id as parameters
+        SqlConnection conC = new SqlConnection("Data Source=c-lomain\\cssqlserver;Initial Catalog=coursehunterdb;Integrated Security=True");
+        //conC.Open();
 
         foreach (String s in checkedList)
         {
-            String currentCmd = "INSERT INTO course_taken VALUES(" + id + ", " + s + ")";
-            SqlCommand cmdAdd = new SqlCommand(currentCmd, conC);
+            using (SqlCommand cmd = new SqlCommand("addCourse", conC))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@StudentID", id);
+                cmd.Parameters.AddWithValue("@CourseID", s);
+                conC.Open();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch(SqlException)
+                {
 
+                }
+            }
+
+            conC.Close();
+        }
+            
+/*
+        List<String> testList = new List<String>();
+
+        using (SqlConnection sqlconn = new SqlConnection("Data Source=c-lomain\\cssqlserver;Initial Catalog=coursehunterdb;Integrated Security=True"))
+        {
+            //\ This will check each course you need and see if you meet prereqs
+            //  foreach(String s in neededCourses)
+            //  {
+            //\ This cmd will give a list of all prereq for current course
+            SqlCommand cmd = new SqlCommand(";WITH CTE AS ( " +
+                                                "SELECT DISTINCT M1.course_id group_id, M1.course_id FROM " +
+                                                "Prerequisites M1 LEFT JOIN Prerequisites M2 ON M1.course_id = M2.prereq_id " +
+                                                " UNION ALL SELECT C.group_id, M.prereq_id " +
+                                                "FROM CTE C JOIN Prerequisites M ON C.course_id = M.course_id) " +
+                                                "SELECT * FROM CTE ORDER BY course_id", sqlconn);
+
+            sqlconn.Open();
+
+            //\ adds all prereqs for current couses to list
+            using (IDataReader dataReader = cmd.ExecuteReader())
+            {
+                while (dataReader.Read())
+                {
+                    String groupID = Convert.ToString(dataReader["group_id"]);
+                    String courseID = Convert.ToString(dataReader["course_id"]);
+                    testList.Add(groupID);
+                    //prereqTemp[0] = groupID;
+                    //prereqTemp[1] = courseID;
+                    //possibleCourses.Add(groupID);
+                    //prereqList.Add(prereqTemp); //\ a list of current prereqs for current course 's'
+                }
+            }
         }
 
 
-        /*
+
+        */
+
+
+          // ResultsBuilder r = new ResultsBuilder(checkedList, needcourses);
+        //List<String> testPossible = r.getPossible();
+
+        //foreach(String s in testList)
+       // {
+            //listboxComplete.Items.Add(s);
+       // }
+        foreach (String s in needcourses)
+        {
+           // listboxRecommend.Items.Add(s);
+        }
+
+        /* OLD CODE
         //\ this populates the newly created table
             String insertStmt = "INSERT INTO " + id +"(courseIdAndNumber) " + "VALUES(@courseId)";
 
@@ -219,38 +289,38 @@ protected void btnSubmit_Click(object sender, EventArgs e)
         }
         
     */
-            //SqlCommand sqlCmd = new SqlCommand("CREATE TABLE " + id + " (takencourses varchar(9))",con);
-            //SqlCommand sqlCmd2;
-            //foreach (String s in needcourses)
-            //{
-            //char[] tempValue = s.ToCharArray();
-            //SqlCommand sqlCmd2 = new SqlCommand("INSERT INTO testid (courseIdAndNumber) VALUES ("+        +")", con);
-            //sqlCmd2.ExecuteNonQuery();
-       // }
+        //SqlCommand sqlCmd = new SqlCommand("CREATE TABLE " + id + " (takencourses varchar(9))",con);
+        //SqlCommand sqlCmd2;
+        //foreach (String s in needcourses)
+        //{
+        //char[] tempValue = s.ToCharArray();
+        //SqlCommand sqlCmd2 = new SqlCommand("INSERT INTO testid (courseIdAndNumber) VALUES ("+        +")", con);
+        //sqlCmd2.ExecuteNonQuery();
+        // }
 
         //con.Close();
         //SqlCommand sqlCmd2 = new SqlCommand("INSERT INTO testid (courseIdAndNumber) VALUES (@VarChar)", con);
 
         //sqlCmd2.Parameters.Add("@VarChar", SqlDbType.VarChar, 9);
         //sqlCmd2.Parameters["@VarChar"].Value = ms.GetBuffer();
-       // sqlCmd2.ExecuteNonQuery();
-
-
-        
+        // sqlCmd2.ExecuteNonQuery();
 
 
 
 
+
+
+        //|||||||| TESTING PURPOSES ONLY
         foreach (String s in checkedList)
     {
-        listboxComplete.Items.Add(s);
+        //listboxComplete.Items.Add(s);
     }
 
     foreach(String s in needcourses)
     {
         //if (!checkedList.Contains(s))
         //{
-            listboxRecommend.Items.Add(s);
+            //listboxRecommend.Items.Add(s);
         //}
     }
 
@@ -262,12 +332,19 @@ protected void btnSubmit_Click(object sender, EventArgs e)
     }
 
 
-        //Response.Redirect("Results.aspx");
-        //Server.Transfer("Results.asps");
+        Response.Redirect("Results.aspx");
+        Server.Transfer("Results.asps");
+
+
+
+        //\\\\\\\\\\\\\\\ END TESTING CODE
 }
 
+    //\ private method that gets selected value from a droplistbox 
+    //\ parameters: curID is the id of the checkbox
     private String getID(String curID)
     {
+        //\ this tells us which droplistbox we need to get a value from
         switch(curID)
         {
             case "ns101": curID = ns101DropBox.SelectedValue;
@@ -287,7 +364,6 @@ protected void btnSubmit_Click(object sender, EventArgs e)
             case "soc102": curID = soc102DropBox.SelectedValue;
                 break;
         }
-
         return curID;
     }
 
