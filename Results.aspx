@@ -18,15 +18,37 @@
         <asp:Label ID="recLabel" runat="server" Text="Label">Recommended Courses</asp:Label>
     </p>
     <p>
+        <asp:Label ID="reclbl" runat="server" Text="Label">Recommended Courses</asp:Label>
+        &nbsp&nbsp&nbsp&nbsp
+       <asp:Label ID="poslbl" runat="server" Text="Label">All Possible Courses</asp:Label>
         
-        <asp:ListBox ID="allPosListBox" runat="server"></asp:ListBox>
-
-
+        
+        
+    </p>
+    <p>
         <asp:Label ID="rec1" runat="server" Text="Label"></asp:Label>
-        <asp:Label ID="rec2" runat="server" Text="Label"></asp:Label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <asp:ListBox ID="allPosListBox" runat="server"></asp:ListBox>
+    </p>
+    <p>
+        <asp:Label ID="rec2" runat="server" Text="Label1"></asp:Label>
+    </p>
+    <p>
         <asp:Label ID="rec3" runat="server" Text="Label"></asp:Label>
+    </p>
+    <p>
         <asp:Label ID="rec4" runat="server" Text="Label"></asp:Label>
+    </p>
+    <p>
         <asp:Label ID="rec5" runat="server" Text="Label"></asp:Label>
+    </p>
+    <p>
+        
+        
+
+
+        
     </p>
 
 

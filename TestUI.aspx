@@ -22,7 +22,7 @@
     <asp:PlaceHolder ID="uiPlaceholder" runat="server">
     
 
-    
+    <form id="form1" runat="server">
     <table class="mytable" width="719" height="510" border="1" style="visibility: visible">
       <tbody class="mytable">
           
@@ -216,26 +216,90 @@
             
             </tbody>
     </table>
+
+        <table class="mytable" width="719" height="510" border="1" style="visibility: visible">
+        <tbody class="mytable">
+        <tr class="tableheader">
+            <td colspan="2">General</td>
+            <td>9</td>
+            
+        </tr>
+        <tr class="tableheader">
+            <td></td>
+            <td>Credit Hours</td>
+            <td>Completed</td>
+        </tr>
+        <tr>
+            <td>CSCIU314: Industrial Robotics</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="changemetoo" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU210: Computer Organization</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="changeme"  runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU234: Visual BASIC Programming or CSCIU238: C++ Programming</td>
+            <td>3</td>
+                
+            <td><asp:CheckBox ID="changeme3" runat="server" /></td>
+        </tr>
+           
+            <tr>
+            <td>CSCIU300: Computer Science II</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CheckBox4" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU310: Intro to Computer Architecture</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CheckBox5" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU321: Computer Science III</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CheckBox6" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU421: Design & Analysis of Algorithms</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CheckBox7" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU511: Operation Systems</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CheckBox8" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU530: Programming Language Structures</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CheckBox9" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU540: Software Engineering</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CheckBox10" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>CSCIU599: Senior Seminar</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CheckBox11" runat="server" /></td>
+        </tr>
+            
+            </tbody>
+    </table>
     
 
     <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
     <asp:ListBox ID="listboxComplete" runat="server"></asp:ListBox>
     <asp:ListBox ID="listboxRecommend" runat="server"></asp:ListBox>
-    
-
+    </form>
+        
 </asp:PlaceHolder>
 
 </asp:Content>
 
 
-<asp:Content ID="Content1" runat="server" contentplaceholderid="HeadContent">
-    <style type="text/CSCIUs">
-        .auto-style1 {
-            height: 61px;
-        }
-        .auto-style2 {
-            height: 41px;
-        }
-    </style>
-</asp:Content>
+
 
