@@ -1,27 +1,30 @@
 ﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="About.aspx.cs" Inherits="About" %>
 
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+<asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
     <div class="container" role="main">
         <div class="jumbotron">
             <h1><%: Title %>.</h1>
             <h2>Your app description page.</h2>
         </div>
+    </div>
+</asp:Content>
 
-        <div class=" container ">
-            <div class="row">
-                <div class="col-md-4">
-                    <p>Use this area to provide additional information.</p>
-                </div>
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+    <div class=" container">
+        <div class="row">
+            <div class="col-md-4">
+                <p>Use this area to provide additional information.</p>
+            </div>
 
-                <div class="col-md-4">
-                   <p>Use this area to provide additional information.</p>
-                </div>
+            <div class="col-md-4">
+                <p>Use this area to provide additional information.</p>
+            </div>
 
-                <div class="col-md-4">
-                    <p>Use this area to provide additional information.</p>
-                </div>
+            <div class="col-md-4">
+                <p>Use this area to provide additional information.</p>
             </div>
         </div>
+
 
         <aside>
             <h3>Aside Title</h3>
