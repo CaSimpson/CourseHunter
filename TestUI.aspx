@@ -230,63 +230,160 @@
             <td>Completed</td>
         </tr>
         <tr>
+            <td>CSCIU311: Information Systems Hardware and Software</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU311" runat="server" /></td>
+        </tr>
+            <tr>
             <td>CSCIU314: Industrial Robotics</td>
             <td>3</td>
-            <td><asp:CheckBox ID="changemetoo" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU314"  runat="server" /></td>
         </tr>
             <tr>
-            <td>CSCIU210: Computer Organization</td>
-            <td>3</td>
-            <td><asp:CheckBox ID="changeme"  runat="server" /></td>
-        </tr>
-            <tr>
-            <td>CSCIU234: Visual BASIC Programming or CSCIU238: C++ Programming</td>
+            <td>CSCIU315: Networking Technology</td>
             <td>3</td>
                 
-            <td><asp:CheckBox ID="changeme3" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU315" runat="server" /></td>
         </tr>
            
             <tr>
-            <td>CSCIU300: Computer Science II</td>
+            <td>CSCIU325: Fundamentals of Relational Database Management</td>
             <td>3</td>
-            <td><asp:CheckBox ID="CheckBox4" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU325" runat="server" /></td>
         </tr>
             <tr>
-            <td>CSCIU310: Intro to Computer Architecture</td>
+            <td>CSCIU355: Digital Forensics</td>
             <td>3</td>
-            <td><asp:CheckBox ID="CheckBox5" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU355" runat="server" /></td>
         </tr>
             <tr>
-            <td>CSCIU321: Computer Science III</td>
+            <td>CSCIU370: Fundamental of Bioinformatics</td>
             <td>3</td>
-            <td><asp:CheckBox ID="CheckBox6" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU370" runat="server" /></td>
         </tr>
             <tr>
-            <td>CSCIU421: Design & Analysis of Algorithms</td>
+            <td>CSCIU399: Independent Study</td>
             <td>3</td>
-            <td><asp:CheckBox ID="CheckBox7" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU399" runat="server" /></td>
         </tr>
             <tr>
-            <td>CSCIU511: Operation Systems</td>
+            <td>CSCIU412: Computer Networks I</td>
             <td>3</td>
-            <td><asp:CheckBox ID="CheckBox8" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU412" runat="server" /></td>
         </tr>
             <tr>
-            <td>CSCIU530: Programming Language Structures</td>
+            <td>CSCI441: Experiential Learning in Computer Science</td>
             <td>3</td>
-            <td><asp:CheckBox ID="CheckBox9" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCI441" runat="server" /></td>
         </tr>
             <tr>
-            <td>CSCIU540: Software Engineering</td>
+            <td>CSCIU450: E-Business Web Application Design</td>
             <td>3</td>
-            <td><asp:CheckBox ID="CheckBox10" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU450" runat="server" /></td>
         </tr>
             <tr>
-            <td>CSCIU599: Senior Seminar</td>
+            <td>CSCIU455: Computer Security</td>
             <td>3</td>
-            <td><asp:CheckBox ID="CheckBox11" runat="server" /></td>
+            <td><asp:CheckBox ID="CSCIU455" runat="server" /></td>
         </tr>
+               <tr>
+            <td>CSCIU456: Applied Cryptography</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU456" runat="server" /></td>
+        </tr>
+               <tr>
+            <td>CSCIU512: Computer Networks II</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU512" runat="server" /></td>
+        </tr>
+               <tr>
+            <td>CSCIU515: Wireless Networks</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU515" runat="server" /></td>
+        </tr>
+               <tr>
+            <td>CSCIU516: Distributed and Network Programming</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU516" runat="server" /></td>
+        </tr>
+               <tr>
+            <td>CSCIU520: Database System Design</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU520" runat="server" /></td>
+        </tr>
+               <tr>
+            <td>CSCIU521: Database Implementation, Application, and Administration</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU521" runat="server" /></td>
+        </tr>
+               <tr>
+            <td>CSCIU525: Knowledge Discovery and Data Mining</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU525" runat="server" /></td>
+        </tr>
+               <tr>
+            <td>CSCIU526: Data Mining for Computer Security</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU526" runat="server" /></td>
+        </tr>
+               <tr>
+            <td>CSCIU555: Advanced Computer Security and Information Assurance</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU555" runat="server" /></td>
+        </tr>
+               <tr>
+            <td>CSCIU556: Web Development Security</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU556" runat="server" /></td>
+        </tr>
+               <tr>
+            <td>CSCIU580: Introduction to Artificial Intelligence</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU580" runat="server" /></td>
+        </tr>
+               <tr>
+            <td>CSCIU585: Introduction to Computer Vision</td>
+            <td>3</td>
+            <td><asp:CheckBox ID="CSCIU585" runat="server" /></td>
+        </tr>
+
             
+            </tbody>
+    </table>
+
+
+        <table class="mytable" width="719" border="1" style="visibility: visible">
+        <tbody class="mytable">
+        <tr class="tableheader">
+            <td colspan="2">Supporting Courses</td>
+            <td colspan="2">13-14</td>
+            
+        </tr>
+        <tr class="tableheader">
+            <td></td>
+            <td>Credit Hours</td>
+            <td colspan="2">Completed</td>
+        </tr>
+        <tr>
+            <td>MATHU174: Elements of Discrete Mathematics</td>
+            <td>3</td>
+            <td colspan="2"><asp:CheckBox ID="MATHU174" runat="server" /></td>
+        </tr>
+            <tr>
+            <td>MATHU315: Statistical Methods I</td>
+            <td>3</td>
+            <td colspan="2"><asp:CheckBox ID="MATHU315"  runat="server" /></td>
+        </tr>
+            <tr>
+          <td>Natural Science (w/lab)</td>
+          <td>4</td>
+          <td><asp:DropDownList ID="ns103DropBox" runat="server"></asp:DropDownList>
+          <td><asp:CheckBox ID="ns103" runat="server" />    
+          </td>
+          
+          
+          
+        
             </tbody>
     </table>
     

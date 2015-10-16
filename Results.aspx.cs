@@ -122,11 +122,11 @@ public partial class Results : System.Web.UI.Page
         }
 
 
-        rec1.Text = recList[0];
-        rec2.Text = recList[1];
-        rec3.Text = recList[2];
-        rec4.Text = recList[3];
-        rec5.Text = recList[4];
+        rec1.Text = " 1.  " + recList[0];
+        rec2.Text = " 2.  " + recList[1];
+        rec3.Text = " 3.  " + recList[2];
+        rec4.Text = " 4.  " + recList[3];
+        rec5.Text = " 5.  " + recList[4];
 
         //rec1.Text = recIntList[0].ToString();
        // rec2.Text = recIntList[1].ToString();

@@ -49,6 +49,9 @@ public partial class TestUI : System.Web.UI.Page
             ns102DropBox.Items.Add("CHEM U112");
             ns101DropBox.Items.Add("PHYS U211");
             ns102DropBox.Items.Add("PHYS U212");
+            ns103DropBox.Items.Add("BIOL U101");
+            ns103DropBox.Items.Add("CHEM U111");
+            ns103DropBox.Items.Add("PHYS U211");
 
             art101DropBox.Items.Add("AFAM U204");
             art101DropBox.Items.Add("ARTH U101");
@@ -355,8 +358,8 @@ public partial class TestUI : System.Web.UI.Page
     }
 
 
-      //  Response.Redirect("Results.aspx");
-       // Server.Transfer("Results.asps");
+       Response.Redirect("Results.aspx");
+        Server.Transfer("Results.asps");
 
 
 
