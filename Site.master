@@ -48,23 +48,20 @@
                     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
                 </ul>
             </div>
-            
+
         </div>
     </nav>
     <div id="body">
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
-        <section class="content-wrapper main-content clear-fix">
-            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
-        </section>
-    </div>
-    <footer>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p>
-                    &copy; <%: DateTime.Now.Year %> - My ASP.NET Application
-                </p>
-            </div>
+        <div class="container">
+                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
         </div>
+    
+    <footer>
+        <p>
+            &copy; <%: DateTime.Now.Year %> - My ASP.NET Application
+        </p>
     </footer>
+        </div>
 </body>
 </html>

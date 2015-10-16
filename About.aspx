@@ -7,19 +7,21 @@
             <h2>Your app description page.</h2>
         </div>
 
-        <article>
-            <p>
-                Use this area to provide additional information.
-            </p>
+        <div class=" container ">
+            <div class="row">
+                <div class="col-md-4">
+                    <p>Use this area to provide additional information.</p>
+                </div>
 
-            <p>
-                Use this area to provide additional information.
-            </p>
+                <div class="col-md-4">
+                   <p>Use this area to provide additional information.</p>
+                </div>
 
-            <p>
-                Use this area to provide additional information.
-            </p>
-        </article>
+                <div class="col-md-4">
+                    <p>Use this area to provide additional information.</p>
+                </div>
+            </div>
+        </div>
 
         <aside>
             <h3>Aside Title</h3>
