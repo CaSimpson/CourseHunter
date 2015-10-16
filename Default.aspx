@@ -7,14 +7,12 @@
                 <h1><%: Title %></h1>
                 <h2>Welcome to CourseHunter, please log in or register to begin!</h2>
             </div>
-
         </div>
     </div>
 </asp:Content>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <div class="container">
-        
         <div class="list-group">
             <div class="list-group-item-heading">
             <h3>We suggest the following:</h3>
