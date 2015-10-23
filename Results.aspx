@@ -9,7 +9,6 @@
             </hgroup>
             <p>
                 
-                </a>
             </p>
         </div>
     </section>
