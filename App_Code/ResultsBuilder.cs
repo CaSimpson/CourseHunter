@@ -91,7 +91,7 @@ public class ResultsBuilder
         int prioritySize = possibleCourses.Count();
         //String[][] priorityArray = new String[prioritySize][];
         Dictionary<int, int> priBook = new Dictionary<int, int>();
-        int i = 0;
+       // int i = 0;
         int pri = 0;
 
 
