@@ -95,6 +95,19 @@ public partial class Progress : System.Web.UI.Page
         myProg = (compCourses * 100) / totalCourses;
 
         //************* END Calculate Percent Complete ***************************************************
+
+
+        
+
+
+
+
+
+
+
+
+
+
     } // END PAGE LOAD
 
     
