@@ -13,6 +13,7 @@ public partial class Progress : System.Web.UI.Page
     List<int> completeCoursesInt = new List<int>();
     List<String> completeCourses = new List<String>();
     List<String> formattedList = new List<String>();
+    String studentName;
     int totalCourses;
     int compCourses;
 
@@ -21,9 +22,24 @@ public partial class Progress : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-         
+        // ******************* This gets student's name from database and adds to lblStudentName *********************************
 
-        //\ adds all courses_taken for user to takeList
+        //\ gets student name from student id
+        SqlConnection con = new SqlConnection("Data Source=c-lomain\\cssqlserver;Initial Catalog=courseHunter540;Integrated Security=True");
+        SqlCommand cmdGetName = new SqlCommand("getStudentName", con);
+        cmdGetName.CommandType = CommandType.StoredProcedure;
+        cmdGetName.Parameters.AddWithValue("@studentID", id);
+
+        con.Open();
+        studentName = Convert.ToString(cmdGetName.ExecuteScalar());
+        con.Close();
+
+        lblStudentName.Text = studentName;
+        //*************** END set Student Name ******************************************************
+
+        // ******************* This gets a list of all completed courses and adds to listbox *********************************
+
+        //\ adds all courses_taken for user to completeCoursesInt array
         using (SqlConnection sqlconn = new SqlConnection("Data Source=c-lomain\\cssqlserver;Initial Catalog=courseHunter540;Integrated Security=True"))
         {
             SqlCommand cmd = new SqlCommand("getCoursesTaken", sqlconn);
@@ -41,13 +57,19 @@ public partial class Progress : System.Web.UI.Page
             sqlconn.Close();
         }
 
+        //\ called getCourseName Method, which converts course_id to course_name
         completeCourses = getCourseName(completeCoursesInt);
 
+        //\ adds all complete courses to Compete Courses List Box
         foreach (String s in completeCourses)
         {
             completeListBox.Items.Add(s);
         }
+        //*************** END get complete courses list ******************************************************
 
+
+
+        //************** This calculates percent of courses complete  ********************************************
 
         //\ This calls store procedure to return a count for all courses
         SqlConnection conCountAll = new SqlConnection("Data Source=c-lomain\\cssqlserver;Initial Catalog=courseHunter540;Integrated Security=True");
@@ -72,24 +94,14 @@ public partial class Progress : System.Web.UI.Page
 
         myProg = (compCourses * 100) / totalCourses;
 
-    }
+        //************* END Calculate Percent Complete ***************************************************
+    } // END PAGE LOAD
 
-    override protected void OnInit(EventArgs e)
-    {
-        //
-        // CODEGEN: This call is required by the ASP.NET Web Form Designer.
-        //
-        InitializeComponent();
-        base.OnInit(e);
-    }
+    
 
-    private void InitializeComponent()
-    {
-        this.Load += new System.EventHandler(this.Page_Load);
+    
 
-    }
-
-
+    // method will convert list of course_id to list of course_names
     private List<String> getCourseName(List<int> intList)
     {
         List<String> convertedList = new List<String>();
@@ -113,13 +125,12 @@ public partial class Progress : System.Web.UI.Page
         }
 
         return convertedList;
+    } // end getCourseName
 
-    }
-
+    //Method CURRENTLY EMPTY
     public static int getProgress()
     {
-        int prog = 50;
-        return prog;
+        return 0;
     }
 
     
