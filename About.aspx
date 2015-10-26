@@ -19,10 +19,10 @@
             <div class="col-md-4">
                 <p>Use this area to provide additional information.</p>
             </div>
-
-            <div class="col-md-4">
+             <div class="col-md-4">
                 <p>Use this area to provide additional information.</p>
             </div>
+            
         </div>
 
 
