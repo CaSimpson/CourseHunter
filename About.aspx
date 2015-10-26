@@ -3,27 +3,36 @@
 <asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
     <div class="container" role="main">
         <div class="jumbotron">
+            <div class="container">
             <h1><%: Title %>.</h1>
             <h2>Your app description page.</h2>
+                </div>
         </div>
     </div>
 </asp:Content>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <div class=" container">
         <div class="row">
             <div class="col-md-4">
-                <p>Use this area to provide additional information.</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Topic</div>
+                    <div class="panel-body">Use this area to provide additional information.</div>
+                </div>
             </div>
 
+           <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Topic</div>
+                    <div class="panel-body">Use this area to provide additional information.</div>
+                </div>
+            </div>
             <div class="col-md-4">
-                <p>Use this area to provide additional information.</p>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Topic</div>
+                    <div class="panel-body">Use this area to provide additional information.</div>
+                </div>
             </div>
-             <div class="col-md-4">
-                <p>Use this area to provide additional information.</p>
-            </div>
-            
-        </div>
+
 
 
         <aside>
