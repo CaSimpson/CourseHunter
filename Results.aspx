@@ -5,7 +5,7 @@
         <div class="content-wrapper">
             <hgroup class="title">
                 <h1><%: Title %></h1>
-                <h2>Select all completed courses and hit submit.</h2>
+                
             </hgroup>
             <p>
                 
@@ -16,10 +16,11 @@
 
 <asp:Content runat="server" ID="appBody" ContentPlaceHolderID="MainContent">
     <form runat="server">
-    <p><asp:Label ID="allPosLabel" runat="server" Text="Label">All Courses Available</asp:Label>
-        <asp:Label ID="recLabel" runat="server" Text="Label">Recommended Courses</asp:Label>
+    <p>
     </p>
     <p>
+        <br />
+        <br />
         <asp:Label ID="reclbl" runat="server" Text="Label">Recommended Courses</asp:Label>
         &nbsp&nbsp&nbsp&nbsp
        <asp:Label ID="poslbl" runat="server" Text="Label">All Possible Courses</asp:Label>

@@ -346,7 +346,7 @@ public partial class TestUI : System.Web.UI.Page
     {
         //if (!checkedList.Contains(s))
         //{
-            listboxRecommend.Items.Add(s.ToString());
+           // listboxRecommend.Items.Add(s.ToString());
         //}
     }
 

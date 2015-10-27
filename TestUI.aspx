@@ -388,9 +388,9 @@
     </table>
     
 
-    <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
-    <asp:ListBox ID="listboxComplete" runat="server"></asp:ListBox>
-    <asp:ListBox ID="listboxRecommend" runat="server"></asp:ListBox>
+    <asp:Button ID="btnSubmit" runat="server" Text="Add" OnClick="btnSubmit_Click" />
+    <asp:Button ID="btnRemove" runat="server" Text="Remove"/>
+
     </form>
         
 </asp:PlaceHolder>
