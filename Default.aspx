@@ -4,16 +4,15 @@
     <div class="container" role="main">
         <div class="content-wrapper">
             <div class="jumbotron">
-                <div class="container">
                 <h1><%: Title %></h1>
                 <h2>Welcome to CourseHunter, please log in or register to begin!</h2>
-                    </div>
             </div>
         </div>
     </div>
 </asp:Content>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+    <div class="container">
         <div class="list-group">
             <div class="list-group-item-heading">
             <h3>We suggest the following:</h3>
@@ -35,4 +34,5 @@
             <a href="http://go.microsoft.com/fwlink/?LinkId=245143">Learn more…</a>
             </div>
         </div>
+    </div>
 </asp:Content>
