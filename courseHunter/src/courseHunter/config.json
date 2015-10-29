@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "courseHunter"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-courseHunter-ee182ae1-aa77-43e2-9315-30c0f3a8b464;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}
