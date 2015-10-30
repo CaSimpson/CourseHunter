@@ -16,8 +16,7 @@
 
 <asp:Content runat="server" ID="appBody" ContentPlaceHolderID="MainContent">
     <form runat="server">
-    <p>
-    </p>
+    <p></p>
     <p>
         <br />
         <br />

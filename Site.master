@@ -7,15 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%: Page.Title %> - My ASP.NET Application</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="theme.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -31,7 +26,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="Default.aspx">Home</a></li>
+                    <li><a href="Default.aspx">Home</a></li>
                     <li><a href="About.aspx">About</a></li>
                     <li><a href="Contact.aspx">Contact</a></li>
                     <li><a href="Account.aspx">Account</a></li>
@@ -48,14 +43,18 @@
     <div id="body">
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
         <div class="container">
-                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
         </div>
-    
-    <footer>
-        <p>
-            &copy; <%: DateTime.Now.Year %> - My ASP.NET Application
-        </p>
-    </footer>
-        </div>
+        <footer class="footer">
+            <div class="container">
+                <ul>
+                    <li><a runat="server" href="~/">Home</a></li>
+                    <li><a runat="server" href="~/About">About</a></li>
+                    <li><a runat="server" href="~/Contact">Contact</a></li>
+                </ul>
+                &copy; <%: DateTime.Now.Year %> - My ASP.NET Application
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
